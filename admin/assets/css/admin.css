@@ -1,0 +1,231 @@
+/* Cấu trúc chung của trang admin */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Cấu trúc chính của container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề chính */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4e73df;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Tiêu đề nhỏ và nút thêm sản phẩm */
+h1.mb-4 {
+    border-bottom: 2px solid #e3e6f0;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Bảng sản phẩm */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 12px 15px;
+}
+
+.table th {
+    background-color: #81BFDA;
+    color: white;
+    font-weight: bold;
+}
+
+.table td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Nút thêm, sửa, xóa */
+.btn {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    background-color: #81BFDA;
+    border: none;
+}
+
+/* Nút thành công */
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Nút cảnh báo */
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+/* Nút xóa */
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Cảnh báo khi không có sản phẩm */
+.container h1.text-danger {
+    color: #dc3545;
+    font-size: 2rem;
+}
+
+/* Phần mô tả trung tâm */
+.container p.text-center {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Liên kết màu xanh khi chưa có sản phẩm */
+.text-center a {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #81BFDA;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.text-center a:hover {
+    background-color: #81BFDA;
+}
+
+/* Đảm bảo giao diện phản hồi tốt trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 0.875rem;
+        padding: 8px 10px;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Thanh điều hướng (navbar) */
+nav {
+    background-color: #81BFDA;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Danh sách liên kết trong navbar */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Các mục trong navbar */
+nav ul li {
+    margin: 0;
+}
+
+/* Các liên kết trong navbar */
+nav ul li a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect cho các liên kết */
+nav ul li a:hover {
+    background-color: #2e59d9;
+    color: #f8f9fc;
+}
+
+/* Thanh điều hướng khi người dùng cuộn xuống (sticky) */
+body {
+    padding-top: 80px; /* Khoảng cách từ top cho nội dung chính */
+}
+
+/* Cấu trúc container khi có navbar cố định */
+.container {
+    margin-top: 50px; /* Để tránh bị che khuất bởi navbar */
+}
+
+/* Thiết kế cho navbar ở màn hình nhỏ (responsive) */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 12px 20px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+}
